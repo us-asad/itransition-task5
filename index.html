@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>Task 5</title>
+</head>
+
+<body>
+  <h1 style="
+        color: #000;
+        padding: 10px;
+        margin-bottom: 50px;
+        text-align: center;
+      " className="title">
+    Generate <span class="text-primary">Demo</span> Users!
+  </h1>
+
+  <div class="container w-75">
+    <select class="form-control mb-4" onchange="reload()" lang="en" id="language">
+      <option>China</option>
+      <option>USA</option>
+      <option>Russia</option>
+    </select>
+    <input style="display: none" type="text" placeholder="Number of errors" onchange="refresh()"
+      class="form-control mb-4" lang="en" id="erren" />
+    <input style="display: none" onchange="refresh()" type="text" placeholder="Количество ошибок"
+      class="form-control mb-4" lang="ru" id="errru" />
+    <input type="text" onchange="refresh()" placeholder="错误数" class="form-control mb-4" lang="cn" id="errcn" />
+    <input style="display: none" type="text" placeholder="Enter seed" onchange="refresh()" class="form-control mb-4"
+      lang="en" id="seeden" />
+    <input style="display: none" type="text" onchange="refresh()" placeholder="Укажите seed" class="form-control"
+      lang="ru" id="seedru" />
+    <input type="text" onchange="refresh()" placeholder="输入种子" class="form-control" lang="cn" id="seedcn" />
+    <input class="btn btn-success my-4" type="button" value="Get Data" onclick="getData()" lang="en"
+      style="display: none" />
+    <button class="btn btn-primary my-4" onclick="table2csv(this,1)" data-table="table" lang="en" style="display: none">
+      Download CSV
+    </button>
+    <input class="btn btn-success my-4" type="button" value="Получить данные" onclick="getData()" lang="ru"
+      style="display: none" />
+    <button class="btn btn-primary my-4" onclick="table2csv(this,1)" data-table="table" lang="ru" style="display: none">
+      Скачать CSV
+    </button>
+    <input class="btn btn-success my-4" type="button" value="获取数据" onclick="getData()" lang="cn" />
+    <button class="btn btn-primary my-4" onclick="table2csv(this,1)" data-table="table" lang="cn">
+      下载 CSV
+    </button>
+    <table class="table table-striped mt-5" id="table">
+      <thead>
+        <tr>
+          <td class="bold" scope="col">#</td>
+          <td class="bold" scope="col">Full Name</td>
+          <td class="bold" scope="col">Phone Number</td>
+          <td class="bold" scope="col">Id</td>
+          <td class="bold" scope="col">Address</td>
+          <td class="bold" scope="col">Email</td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.1.0/faker.js"></script>
+  <script src="./table2csv.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>
